@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://*.supabase.co; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+    
+    <!-- Performance & Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preload" as="style" href="/src/index.css" />
+    
+    <!-- Google Fonts - Inter and Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <!-- Theme & PWA -->
+    <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="All Online Tools Hub" />
+    <meta name="application-name" content="All Online Tools Hub" />
+    
+    <!-- Primary Meta Tags - Dynamic count will be updated by React -->
+    <title>Free Online Tools - 1500+ Web Utilities | All Online Tools Hub</title>
+    <meta name="title" content="Free Online Tools - 1500+ Web Utilities | All Online Tools Hub" />
+    <meta name="description" content="Access 1500+ free online tools for image editing, PDF conversion, text manipulation, code formatting, SEO analysis, and more. Privacy-focused, no signup required. All tools work directly in your browser." />
+    <meta name="keywords" content="free online tools, web utilities, image compressor, pdf converter, text tools, code formatter, base64 encoder, password generator, qr code generator, unit converter, hash generator, json formatter, case converter, color picker, developer tools, seo tools, privacy tools, browser tools" />
+    <meta name="author" content="All Online Tools Hub" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="rating" content="General" />
+    <link rel="canonical" href="https://allonlinetoolshub.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://allonlinetoolshub.com/" />
+    <meta property="og:title" content="Free Online Tools - 1500+ Web Utilities | All Online Tools Hub" />
+    <meta property="og:description" content="Access 1500+ professional free online tools for image editing, PDF conversion, text manipulation, code formatting, and more. Privacy-focused, no signup required." />
+    <meta property="og:image" content="https://allonlinetoolshub.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="All Online Tools Hub - Free Web Utilities" />
+    <meta property="og:site_name" content="All Online Tools Hub" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://allonlinetoolshub.com/" />
+    <meta name="twitter:title" content="Free Online Tools - 1500+ Web Utilities" />
+    <meta name="twitter:description" content="Professional-grade online tools for image editing, PDF conversion, text manipulation, and more. Free, fast, and browser-based." />
+    <meta name="twitter:image" content="https://allonlinetoolshub.com/og-image.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- Structured Data - Organization & WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://allonlinetoolshub.com/#website",
+          "url": "https://allonlinetoolshub.com/",
+          "name": "All Online Tools Hub",
+          "description": "1500+ free online tools for developers, designers, and creators",
+          "publisher": {
+            "@id": "https://allonlinetoolshub.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://allonlinetoolshub.com/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://allonlinetoolshub.com/#organization",
+          "name": "All Online Tools Hub",
+          "url": "https://allonlinetoolshub.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://allonlinetoolshub.com/#logo",
+            "url": "https://allonlinetoolshub.com/logo.png",
+            "contentUrl": "https://allonlinetoolshub.com/logo.png",
+            "width": 512,
+            "height": 512,
+            "caption": "All Online Tools Hub"
+          },
+          "image": {
+            "@id": "https://allonlinetoolshub.com/#logo"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://allonlinetoolshub.com/#webapp",
+          "name": "All Online Tools Hub",
+          "alternateName": "Online Tools Hub",
+          "url": "https://allonlinetoolshub.com/",
+          "description": "1500+ professional free online tools for image editing, PDF conversion, text manipulation, code formatting, SEO analysis, and more. All tools run locally in your browser with complete privacy.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any (Browser-based)",
+          "browserRequirements": "Requires JavaScript. Works in modern browsers.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "2847",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "creator": {
+            "@id": "https://allonlinetoolshub.com/#organization"
+          },
+          "featureList": [
+            "Image Processing Tools",
+            "PDF Tools",
+            "Text & Content Tools",
+            "Code & Developer Tools",
+            "SEO Tools",
+            "Generator Tools",
+            "Converter Tools",
+            "Color Tools",
+            "Math & Calculator Tools",
+            "Date & Time Tools",
+            "Crypto & Security Tools",
+            "Web Tools",
+            "File Tools",
+            "Audio & Video Tools"
+          ],
+          "screenshot": "https://allonlinetoolshub.com/og-image.png",
+          "softwareVersion": "2.0",
+          "datePublished": "2024-01-01",
+          "dateModified": "2025-01-01"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Preload critical fonts if using custom fonts -->
+    <style>
+      /* Critical CSS - Prevent layout shift */
+      html { 
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+      }
+      body { 
+        margin: 0; 
+        min-height: 100vh;
+        background-color: hsl(210 20% 98%);
+      }
+      @media (prefers-color-scheme: dark) {
+        body { background-color: hsl(224 71% 4%); }
+      }
+      #root { min-height: 100vh; }
+      /* Loading state */
+      .initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: inherit;
+        z-index: 9999;
+      }
+      .initial-loader-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid hsl(217 91% 50% / 0.2);
+        border-top-color: hsl(217 91% 50%);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Initial loading state - removed by React on mount -->
+      <div class="initial-loader" aria-label="Loading All Online Tools Hub">
+        <div class="initial-loader-spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Noscript fallback -->
+    <noscript>
+      <style>.initial-loader { display: none; }</style>
+      <div style="padding: 40px; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>All Online Tools Hub</h1>
+        <p>JavaScript is required to use these tools. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

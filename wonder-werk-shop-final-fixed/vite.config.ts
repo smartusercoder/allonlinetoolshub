@@ -1,0 +1,99 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import { componentTagger } from "lovable-tagger";
+import { execSync } from 'child_process';
+
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  plugins: [
+    react(), 
+    mode === "development" && componentTagger(),
+    // Generate sitemap after build
+    {
+      name: 'generate-sitemap',
+      closeBundle() {
+        if (mode === 'production') {
+          try {
+            console.log('\n🗺️  Generating dynamic sitemap...');
+            execSync('tsx scripts/generate-dynamic-sitemap.ts', { stdio: 'inherit' });
+          } catch (error) {
+            console.error('❌ Sitemap generation failed:', error);
+          }
+        }
+      }
+    }
+  ].filter(Boolean),
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    // Enable source maps for production debugging (optional, can remove for smaller builds)
+    sourcemap: false,
+    // Target modern browsers for smaller bundle
+    target: 'es2020',
+    // CSS code splitting
+    cssCodeSplit: true,
+    // Rollup optimizations
+    rollupOptions: {
+      output: {
+        // Better chunk naming for caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Manual chunks for better caching
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
+          'ui-core': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          'ui-form': ['@radix-ui/react-checkbox', '@radix-ui/react-select', '@radix-ui/react-slider'],
+          'icons': ['lucide-react'],
+        },
+      },
+    },
+    // Increased chunk size limit for large tool collection
+    chunkSizeWarningLimit: 1500,
+    // Use terser for better minification
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+        passes: 2,
+      },
+      mangle: {
+        safari10: true,
+      },
+      format: {
+        comments: false,
+      },
+    },
+  },
+  // Optimize deps for faster dev server
+  optimizeDeps: {
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom',
+      'lucide-react',
+      '@radix-ui/react-accordion',
+      '@radix-ui/react-dialog',
+    ],
+    // Exclude large dependencies that are rarely used
+    exclude: [],
+  },
+  // Enable experimental features for better performance
+  esbuild: {
+    // Remove legal comments
+    legalComments: 'none',
+    // Target modern browsers
+    target: 'es2020',
+  },
+}));
