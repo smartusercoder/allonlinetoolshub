@@ -1,4 +1,2 @@
-# Netlify redirects for SPA routing
-# All routes should serve index.html for client-side routing
-
-/*    /index.html   200
+# Cloudflare Pages Redirects
+# SPA routing is automatic - no catch-all needed
