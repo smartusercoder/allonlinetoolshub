@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import { execSync } from 'child_process';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,20 +12,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(), 
     mode === "development" && componentTagger(),
-    // Generate sitemap after build
-    {
-      name: 'generate-sitemap',
-      closeBundle() {
-        if (mode === 'production') {
-          try {
-            console.log('\n🗺️  Generating dynamic sitemap...');
-            execSync('tsx scripts/generate-dynamic-sitemap.ts', { stdio: 'inherit' });
-          } catch (error) {
-            console.error('❌ Sitemap generation failed:', error);
-          }
-        }
-      }
-    }
   ].filter(Boolean),
   resolve: {
     alias: {
