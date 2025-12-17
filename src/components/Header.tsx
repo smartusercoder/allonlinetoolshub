@@ -298,7 +298,7 @@ export const Header = () => {
               </form>
 
               {searchResults.length > 0 && (
-                <div className="max-h-72 overflow-y-auto">
+                <div className="max-h-80 overflow-y-auto pb-1">
                   {searchResults.map((tool) => (
                     <Link
                       key={tool.id}
