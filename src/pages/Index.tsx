@@ -136,23 +136,25 @@ export const HomePage = () => {
               {/* Search Results Dropdown */}
               {isSearching && searchResults.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl shadow-xl z-50 overflow-hidden animate-scale-in">
-                  {searchResults.map((tool) => (
-                    <Link
-                      key={tool.id}
-                      to={tool.path || `/tool/${tool.id}`}
-                      className="flex items-center gap-3 p-3 hover:bg-secondary transition-colors border-b border-border last:border-0"
-                    >
-                      <tool.icon className="w-4 h-4 text-primary" />
-                      <div className="flex-1 text-left">
-                        <p className="font-medium text-foreground text-sm">{tool.title}</p>
-                        <p className="text-xs text-muted-foreground">{tool.description}</p>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-muted-foreground" />
-                    </Link>
-                  ))}
+                  <div className="max-h-[400px] overflow-y-auto">
+                    {searchResults.map((tool) => (
+                      <Link
+                        key={tool.id}
+                        to={tool.path || `/tool/${tool.id}`}
+                        className="flex items-center gap-3 p-3 hover:bg-secondary transition-colors border-b border-border"
+                      >
+                        <tool.icon className="w-4 h-4 text-primary shrink-0" />
+                        <div className="flex-1 text-left min-w-0">
+                          <p className="font-medium text-foreground text-sm">{tool.title}</p>
+                          <p className="text-xs text-muted-foreground truncate">{tool.description}</p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-muted-foreground shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
                   <Link
                     to={`/search?q=${encodeURIComponent(searchQuery)}`}
-                    className="flex items-center justify-center gap-2 p-3 bg-secondary hover:bg-muted transition-colors text-primary font-medium text-sm"
+                    className="flex items-center justify-center gap-2 p-3 bg-secondary hover:bg-muted transition-colors text-primary font-medium text-sm border-t border-border"
                   >
                     View all results
                     <ArrowRight className="w-4 h-4" />
