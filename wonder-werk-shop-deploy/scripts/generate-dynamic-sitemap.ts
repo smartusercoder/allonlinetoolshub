@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { toolsData } from '../src/data/toolsData';
 import { categories } from '../src/data/categories';
@@ -182,21 +182,12 @@ function validateSitemap(xml: string, type: string): void {
 try {
   console.log('🚀 Generating sitemap index with category-based sitemaps...\n');
   
-  // Output location:
-  // - When running after `vite build` (recommended), write directly into `dist` so Cloudflare Pages deploy includes it.
-  // - Otherwise fall back to `public` for local/dev workflows.
-  const distDir = join(process.cwd(), 'dist');
   const publicDir = join(process.cwd(), 'public');
-  const outDir = existsSync(distDir) ? distDir : publicDir;
-
-  if (!existsSync(outDir)) {
-    mkdirSync(outDir, { recursive: true });
-  }
   
   // Generate main sitemap
   console.log('📄 Generating main sitemap...');
   const mainSitemap = generateMainSitemap();
-  writeFileSync(join(outDir, 'sitemap-main.xml'), mainSitemap, 'utf-8');
+  writeFileSync(join(publicDir, 'sitemap-main.xml'), mainSitemap, 'utf-8');
   validateSitemap(mainSitemap, 'Main');
   
   // Generate category sitemaps
@@ -209,7 +200,7 @@ try {
     const categorySitemap = generateCategorySitemap(category.id as ToolCategory);
     if (categorySitemap) {
       const filename = `sitemap-${category.id}.xml`;
-      writeFileSync(join(outDir, filename), categorySitemap, 'utf-8');
+      writeFileSync(join(publicDir, filename), categorySitemap, 'utf-8');
       
       const toolCount = toolsData.filter(t => t.implemented && t.category === category.id).length;
       totalToolsInSitemaps += toolCount;
@@ -221,7 +212,7 @@ try {
   // Generate sitemap index
   console.log('\n📋 Generating sitemap index...');
   const sitemapIndex = generateSitemapIndex();
-  writeFileSync(join(outDir, 'sitemap.xml'), sitemapIndex, 'utf-8');
+  writeFileSync(join(publicDir, 'sitemap.xml'), sitemapIndex, 'utf-8');
   validateSitemap(sitemapIndex, 'Index');
   
   // Summary statistics
@@ -230,7 +221,7 @@ try {
   const implementedCount = toolsData.filter(t => t.implemented).length;
   
   console.log(`\n✅ Sitemap index generated successfully!`);
-  console.log(`📍 Location: ${existsSync(distDir) ? 'dist' : 'public'}/sitemap.xml`);
+  console.log(`📍 Location: public/sitemap.xml`);
   console.log(`📊 Structure:`);
   console.log(`   • 1 sitemap index (sitemap.xml)`);
   console.log(`   • 1 main sitemap (sitemap-main.xml)`);

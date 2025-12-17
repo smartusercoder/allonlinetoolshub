@@ -34,7 +34,6 @@ const ToolGridComponent = ({ tools, emptyMessage = "No tools found" }: ToolGridP
           <ToolCard 
             key={tool.id} 
             tool={tool}
-            disabled={!tool.implemented}
           />
         ))}
       </div>

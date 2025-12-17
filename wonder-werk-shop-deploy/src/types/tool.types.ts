@@ -19,7 +19,8 @@ export type ToolCategory =
   | "color"
   | "seo"
   | "video"
-  | "audio";
+  | "audio"
+  | "utility";
 
 /**
  * Tool interface with strict typing

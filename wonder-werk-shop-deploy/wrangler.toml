@@ -1,0 +1,14 @@
+# Cloudflare Pages configuration
+# https://developers.cloudflare.com/pages/platform/wrangler-configuration/
+
+name = "all-online-tools-hub"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+# Build configuration
+[build]
+command = "npm run build"
+
+# Environment variables (set in Cloudflare dashboard for secrets)
+[vars]
+NODE_VERSION = "20"

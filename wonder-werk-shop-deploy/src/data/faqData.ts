@@ -356,28 +356,6 @@ export const toolFAQs: Record<string, FAQ[]> = {
       answer: "Our generator uses cryptographically secure random number generation (CSPRNG), making the UUIDs suitable for security-sensitive applications like session tokens."
     }
   ],
-  "hash-generator": [
-    {
-      question: "What hash algorithms are supported?",
-      answer: "We support MD5, SHA-1, SHA-256, SHA-384, SHA-512, and other common algorithms. SHA-256 is recommended for most security applications as MD5 and SHA-1 are considered weak."
-    },
-    {
-      question: "Can I hash files as well as text?",
-      answer: "Yes, you can hash both text input and uploaded files. File hashing is useful for verifying downloads, checking file integrity, and comparing file contents."
-    },
-    {
-      question: "Is the hash generated securely?",
-      answer: "Yes, all hashing is done locally in your browser using standard cryptographic libraries. Your input data is never sent to our servers."
-    },
-    {
-      question: "What's the difference between hashing and encryption?",
-      answer: "Hashing is one-way—you cannot recover original data from a hash. Encryption is two-way with a key. Use hashing for verification and integrity; use encryption when you need to retrieve original data."
-    },
-    {
-      question: "Which hash algorithm should I use?",
-      answer: "For security purposes, use SHA-256 or SHA-512. For checksums and non-security purposes, MD5 or SHA-1 are faster but less secure. Never use MD5 for password hashing."
-    }
-  ],
   "url-encoder": [
     {
       question: "What characters need to be URL encoded?",
