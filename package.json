@@ -4,6 +4,39 @@
   "description": "1500+ free online tools for developers, designers, and creators",
   "type": "module",
   "scripts": {
+    "build": "echo 'Site is pre-built and ready for deployment' && test -f index.html && test -d assets",
+    "validate": "npm run validate:html && npm run validate:files",
+    "validate:html": "test -f index.html && echo '✓ index.html exists'",
+    "validate:files": "test -f manifest.json && test -f robots.txt && test -f _headers && echo '✓ All required files exist'",
+    "preview": "npx serve . -p 3000",
+    "check": "npm run validate"
+  },
+  "keywords": [
+    "online-tools",
+    "web-utilities",
+    "developer-tools",
+    "image-tools",
+    "pdf-tools",
+    "text-tools",
+    "seo-tools",
+    "converter-tools",
+    "free-tools",
+    "browser-tools",
+    "privacy-focused"
+  ],
+  "author": "All Online Tools Hub",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smartusercoder/allonlinetoolshub.git"
+  },
+  "homepage": "https://allonlinetoolshub.com",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage"

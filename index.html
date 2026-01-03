@@ -17,6 +17,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/assets/index-CqCwoZTM.js" as="script" crossorigin />
+    <link rel="preload" href="/assets/index-RHgyuVe6.css" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
     
     <!-- Google Fonts - Inter and Space Grotesk -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -228,5 +234,62 @@
         <p>JavaScript is required to use these tools. Please enable JavaScript in your browser settings.</p>
       </div>
     </noscript>
+
+    <!-- Web Vitals Performance Monitoring -->
+    <script>
+      // Measure Core Web Vitals
+      if ('PerformanceObserver' in window) {
+        // First Contentful Paint (FCP)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (entry.name === 'first-contentful-paint') {
+              console.log('FCP:', entry.startTime, 'ms');
+            }
+          }
+        }).observe({ type: 'paint', buffered: true });
+
+        // Largest Contentful Paint (LCP)
+        new PerformanceObserver((entryList) => {
+          const entries = entryList.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime, 'ms');
+        }).observe({ type: 'largest-contentful-paint', buffered: true });
+
+        // Cumulative Layout Shift (CLS)
+        let clsValue = 0;
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+            }
+          }
+          console.log('CLS:', clsValue);
+        }).observe({ type: 'layout-shift', buffered: true });
+
+        // First Input Delay (FID)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            console.log('FID:', entry.processingStart - entry.startTime, 'ms');
+          }
+        }).observe({ type: 'first-input', buffered: true });
+      }
+
+      // Service Worker Registration for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('Service Worker registered:', registration.scope);
+              // Check for updates periodically
+              setInterval(() => {
+                registration.update();
+              }, 60000); // Check every minute
+            })
+            .catch((error) => {
+              console.log('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
