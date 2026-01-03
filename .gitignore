@@ -1,0 +1,100 @@
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Operating System
+.AppleDouble
+.LSOverride
+Desktop.ini
+
+# Build Artifacts & Dependencies
+node_modules/
+dist/
+build/
+*.egg-info/
+*.pyc
+__pycache__/
+.pytest_cache/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Package Managers
+package-lock.json
+yarn.lock
+Pipfile.lock
+composer.lock
+.bundle/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.iml
+*.sublime-*
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+*~
+.DS_Store
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+
+# Testing
+coverage/
+.coverage
+.nyc_output/
+lcov.info
+
+# Runtime
+.cache/
+.run/
+tmp/
+temp/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS junk files
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# Misc
+.vagrant/
+.venv/
+venv/
+ENV/
+env/
