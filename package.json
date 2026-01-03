@@ -1,0 +1,15 @@
+{
+  "name": "allonlinetoolshub",
+  "version": "2.0.0",
+  "description": "1500+ free online tools for developers, designers, and creators",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^1.1.0",
+    "vitest": "^1.1.0"
+  }
+}
