@@ -37,4 +37,12 @@
   },
   "devDependencies": {},
   "dependencies": {}
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^1.1.0",
+    "vitest": "^1.1.0"
+  }
 }
