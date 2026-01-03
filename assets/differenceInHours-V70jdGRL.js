@@ -1,0 +1,1 @@
+import{g as o}from"./getRoundingMethod-CVT_g7zY.js";import{m as t}from"./differenceInCalendarDays-CjFW0K9s.js";import{t as n}from"./toDate-DOY2OXvg.js";function r(o,t){return+n(o)-+n(t)}function e(n,e,a){const s=r(n,e)/t;return o(a?.roundingMethod)(s)}export{r as a,e as d};

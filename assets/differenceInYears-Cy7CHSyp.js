@@ -1,0 +1,1 @@
+import{c as t}from"./compareAsc-DPM-0W6V.js";import{t as r}from"./toDate-DOY2OXvg.js";function e(e,o){const s=r(e),a=r(o),n=t(s,a),c=Math.abs(function(t,e){const o=r(t),s=r(e);return o.getFullYear()-s.getFullYear()}(s,a));s.setFullYear(1584),a.setFullYear(1584);const l=n*(c-+(t(s,a)===-n));return 0===l?0:l}export{e as d};

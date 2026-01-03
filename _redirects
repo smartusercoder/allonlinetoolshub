@@ -1,0 +1,6 @@
+# Redirect legacy legal routes to canonical ones
+/privacy /privacy-policy 301
+/terms /terms-of-service 301
+
+# Single Page App fallback
+/* /index.html 200
