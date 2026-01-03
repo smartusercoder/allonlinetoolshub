@@ -44,18 +44,31 @@
 
 ```
 allonlinetoolshub/
-├── assets/               # Compiled JavaScript and CSS bundles
+├── src/                  # SOURCE CODE (React + TypeScript)
+│   ├── components/      # Reusable UI components
+│   ├── tools/           # Tool implementations
+│   │   ├── generators/  # Generator tools (UUID, Lorem Ipsum, etc.)
+│   │   ├── calculators/ # Calculator tools
+│   │   ├── formatters/  # Code/text formatters
+│   │   ├── converters/  # Converters (Base64, URL, Hash, etc.)
+│   │   └── validators/  # Validation tools
+│   ├── hooks/           # Custom React hooks
+│   ├── utils/           # Utility functions
+│   ├── types/           # TypeScript type definitions
+│   └── lib/             # Third-party library configurations
+├── assets/              # Compiled JavaScript and CSS bundles
 ├── _headers             # Cloudflare Pages headers configuration
 ├── _redirects           # Cloudflare Pages redirects
 ├── _routes.json         # Cloudflare Pages routing rules
+├── vite.config.ts       # Vite build configuration
+├── tsconfig.json        # TypeScript configuration
 ├── wrangler.toml        # Cloudflare configuration
 ├── package.json         # Node.js dependencies and scripts
 ├── index.html           # Main HTML entry point
 ├── manifest.json        # PWA manifest
 ├── robots.txt           # Search engine crawling rules
 ├── sitemap.xml          # Master sitemap index
-├── sitemap-*.xml        # Category-specific sitemaps
-└── README.md            # This file
+└── sitemap-*.xml        # Category-specific sitemaps
 ```
 
 ## Quick Start
@@ -65,7 +78,9 @@ allonlinetoolshub/
 - Node.js 18+ and npm 9+
 - Git
 
-### Installation
+### Option 1: Development Mode (Build from Source)
+
+If you want to modify tools or add new ones:
 
 ```bash
 # Clone the repository
@@ -74,14 +89,108 @@ git clone https://github.com/smartusercoder/allonlinetoolshub.git
 # Navigate to the project directory
 cd allonlinetoolshub
 
-# Validate the build (site is pre-built)
-npm run build
+# Install dependencies
+npm install
 
-# Preview locally
-npm run preview
+# Start development server
+npm run dev
+# Opens at http://localhost:3000
+
+# Build for production
+npm run build
+# Outputs to current directory
 ```
 
-The site is pre-built and ready for deployment. All assets are in the `assets/` folder and `index.html` is the entry point.
+### Option 2: Preview Production Build
+
+If you just want to preview the pre-built site:
+
+```bash
+# Clone the repository
+git clone https://github.com/smartusercoder/allonlinetoolshub.git
+
+# Navigate to the project directory
+cd allonlinetoolshub
+
+# Install serve (if not already installed)
+npm install -g serve
+
+# Preview the site
+npm run preview
+# Or: serve . -p 3000
+```
+
+## Development
+
+### Working with Source Code
+
+The `src/` directory contains the React + TypeScript source code for all tools.
+
+**Implemented Tools (Working Examples):**
+- ✅ App Name Generator
+- ✅ Bug Report Generator
+- ✅ Password Generator
+- ✅ UUID Generator
+- ✅ Lorem Ipsum Generator
+- ✅ Base64 Encoder/Decoder
+- ✅ URL Encoder/Decoder
+- ✅ Hash Generator (SHA-1, SHA-256, SHA-384, SHA-512)
+
+**See:**
+- [`TOOL-IMPLEMENTATION-GUIDE.md`](TOOL-IMPLEMENTATION-GUIDE.md) - Complete guide with examples
+- [`src/README.md`](src/README.md) - Source code documentation
+- [`TOOLS-PLACEHOLDER-ISSUE.md`](TOOLS-PLACEHOLDER-ISSUE.md) - List of tools needing implementation
+
+### Adding a New Tool
+
+1. Create a new component in `src/tools/[category]/YourTool.tsx`
+2. Implement actual logic (see examples in existing tools)
+3. Test in development mode: `npm run dev`
+4. Build for production: `npm run build`
+5. Commit and deploy
+
+**Example:**
+
+```typescript
+// src/tools/generators/MyGenerator.tsx
+import { useState, useCallback } from 'react';
+
+export const MyGenerator = () => {
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('');
+
+  const handleGenerate = useCallback(() => {
+    // ACTUAL IMPLEMENTATION - not placeholder!
+    const result = generateSomething(input);
+    setOutput(result);
+  }, [input]);
+
+  return (
+    <div className="tool-container">
+      <h1>My Generator</h1>
+      <textarea value={input} onChange={(e) => setInput(e.target.value)} />
+      <button onClick={handleGenerate}>Generate</button>
+      {output && <pre>{output}</pre>}
+    </div>
+  );
+};
+```
+
+### Build Process
+
+```bash
+# Development
+npm run dev          # Start dev server with hot reload
+
+# Production
+npm run build        # TypeScript compilation + Vite build
+npm run preview      # Preview production build
+
+# Validation
+npm run validate     # Validate required files exist
+npm run lint         # Lint TypeScript/React code
+npm test             # Run tests
+```
 
 ## Deployment
 

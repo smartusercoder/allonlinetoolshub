@@ -4,11 +4,14 @@
   "description": "1500+ free online tools for developers, designers, and creators",
   "type": "module",
   "scripts": {
-    "build": "echo 'Site is pre-built and ready for deployment' && test -f index.html && test -d assets",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:check": "test -f index.html && test -d assets && echo '✓ Build output exists'",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "validate": "npm run validate:html && npm run validate:files",
     "validate:html": "test -f index.html && echo '✓ index.html exists'",
     "validate:files": "test -f manifest.json && test -f robots.txt && test -f _headers && echo '✓ All required files exist'",
-    "preview": "npx serve . -p 3000",
     "check": "npm run validate",
     "test": "vitest",
     "test:watch": "vitest --watch",
@@ -39,8 +42,24 @@
     "npm": ">=9.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "@vitest/ui": "^1.1.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
     "vitest": "^1.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "lucide-react": "^0.294.0"
+  }
 }
