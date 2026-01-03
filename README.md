@@ -126,15 +126,21 @@ npm run preview
 
 The `src/` directory contains the React + TypeScript source code for all tools.
 
-**Implemented Tools (Working Examples):**
+**Implemented Tools (14 Working Examples):**
 - ✅ App Name Generator
 - ✅ Bug Report Generator
 - ✅ Password Generator
 - ✅ UUID Generator
 - ✅ Lorem Ipsum Generator
+- ✅ Color Palette Generator
 - ✅ Base64 Encoder/Decoder
 - ✅ URL Encoder/Decoder
 - ✅ Hash Generator (SHA-1, SHA-256, SHA-384, SHA-512)
+- ✅ Timestamp Converter
+- ✅ JSON Formatter & Validator
+- ✅ Case Converter (12 case types)
+- ✅ Regex Tester
+- ✅ Text Analyzer (Word/Character Counter)
 
 **See:**
 - [`TOOL-IMPLEMENTATION-GUIDE.md`](TOOL-IMPLEMENTATION-GUIDE.md) - Complete guide with examples

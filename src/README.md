@@ -23,17 +23,29 @@ src/
 
 ## Implemented Tools
 
-### Generators
+### Generators (6 tools)
 - ✅ App Name Generator (`tools/generators/AppNameGenerator.tsx`)
 - ✅ Bug Report Generator (`tools/generators/BugReportGenerator.tsx`)
+- ✅ Password Generator (`tools/generators/PasswordGenerator.tsx`)
 - ✅ UUID Generator (`tools/generators/UUIDGenerator.tsx`)
 - ✅ Lorem Ipsum Generator (`tools/generators/LoremIpsumGenerator.tsx`)
-- ✅ Password Generator (`tools/generators/PasswordGenerator.tsx`)
+- ✅ Color Palette Generator (`tools/generators/ColorPaletteGenerator.tsx`)
 
-### Converters
+### Converters (4 tools)
 - ✅ Base64 Encoder/Decoder (`tools/converters/Base64Converter.tsx`)
 - ✅ URL Encoder/Decoder (`tools/converters/URLConverter.tsx`)
 - ✅ Hash Generator (`tools/converters/HashGenerator.tsx`)
+- ✅ Timestamp Converter (`tools/converters/TimestampConverter.tsx`)
+
+### Formatters (2 tools)
+- ✅ JSON Formatter & Validator (`tools/formatters/JsonFormatter.tsx`)
+- ✅ Case Converter (`tools/formatters/CaseConverter.tsx`)
+
+### Validators (2 tools)
+- ✅ Regex Tester (`tools/validators/RegexTester.tsx`)
+- ✅ Text Analyzer (Word/Character Counter) (`tools/validators/TextAnalyzer.tsx`)
+
+**Total: 14 Fully Working Tools**
 
 ## Adding a New Tool
 
