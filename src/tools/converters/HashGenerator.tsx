@@ -22,7 +22,7 @@ const simpleHash = async (str: string, algorithm: string): Promise<string> => {
 
 export const HashGenerator = () => {
   const [input, setInput] = useState('');
-  const [algorithm, setAlgorithm] = useState('SHA-256');
+  const [_algorithm, _setAlgorithm] = useState('SHA-256');
   const [hashes, setHashes] = useState<Record<string, string>>({});
   const [isProcessing, setIsProcessing] = useState(false);
 

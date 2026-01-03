@@ -2,7 +2,7 @@
  * Utility functions for generator tools
  */
 
-export const generateRandom Elements = <T>(array: T[], count: number): T[] => {
+export const generateRandomElements = <T>(array: T[], count: number): T[] => {
   const result: T[] = [];
   const arrayCopy = [...array];
 

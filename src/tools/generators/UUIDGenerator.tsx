@@ -10,7 +10,7 @@ const generateUUID = (): string => {
 
 export const UUIDGenerator = () => {
   const [count, setCount] = useState(1);
-  const [version, setVersion] = useState('v4');
+  const [_version, _setVersion] = useState('v4');
   const [uppercase, setUppercase] = useState(false);
   const [hyphens, setHyphens] = useState(true);
   const [uuids, setUuids] = useState<string[]>([]);
