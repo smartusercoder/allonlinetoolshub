@@ -14,7 +14,7 @@
 - **Fast & Responsive**: Built with React and optimized for performance
 - **PWA Support**: Install as an app on any device
 - **SEO Optimized**: Full structured data and sitemap coverage
-- **Offline Capable**: Service worker for offline functionality
+- **Performance Monitored**: Built-in Web Vitals tracking
 
 ## Tool Categories
 
@@ -38,7 +38,7 @@
 - **Icons**: Font Awesome 6.5.1
 - **Fonts**: Inter & Space Grotesk (Google Fonts)
 - **Deployment**: Cloudflare Pages
-- **PWA**: Service Worker with offline support
+- **PWA**: Manifest with installable app support
 
 ## Project Structure
 
@@ -52,7 +52,6 @@ allonlinetoolshub/
 ├── package.json         # Node.js dependencies and scripts
 ├── index.html           # Main HTML entry point
 ├── manifest.json        # PWA manifest
-├── sw.js                # Service Worker for offline support
 ├── robots.txt           # Search engine crawling rules
 ├── sitemap.xml          # Master sitemap index
 ├── sitemap-*.xml        # Category-specific sitemaps
@@ -135,10 +134,10 @@ Simply upload all files to your static hosting service. No build step needed.
    - Cumulative Layout Shift (CLS)
    - First Input Delay (FID)
 
-4. **Service Worker**
-   - Offline support
-   - Cache-first strategy for assets
-   - Network-first for HTML
+4. **Smart Caching**
+   - Long-term caching for static assets (1 year)
+   - Stale-while-revalidate for images
+   - Fresh content delivery for HTML
 
 ## Security Features
 
@@ -188,9 +187,9 @@ Simply upload all files to your static hosting service. No build step needed.
 ## PWA Features
 
 - **Installable**: Add to home screen on mobile/desktop
-- **Offline Support**: Service worker caching
 - **App Manifest**: Full PWA manifest with icons
 - **Theme Colors**: Adaptive theme colors for light/dark mode
+- **Mobile Optimized**: Touch-friendly interface
 
 ## Development
 

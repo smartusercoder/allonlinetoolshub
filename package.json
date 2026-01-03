@@ -9,7 +9,10 @@
     "validate:html": "test -f index.html && echo '✓ index.html exists'",
     "validate:files": "test -f manifest.json && test -f robots.txt && test -f _headers && echo '✓ All required files exist'",
     "preview": "npx serve . -p 3000",
-    "check": "npm run validate"
+    "check": "npm run validate",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [
     "online-tools",
@@ -35,14 +38,9 @@
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
-  "devDependencies": {},
-  "dependencies": {}
-    "test": "vitest",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage"
-  },
   "devDependencies": {
     "@vitest/ui": "^1.1.0",
     "vitest": "^1.1.0"
-  }
+  },
+  "dependencies": {}
 }

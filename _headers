@@ -51,15 +51,10 @@
   X-Content-Type-Options: nosniff
   Access-Control-Allow-Origin: *
 
-# Manifest and Service Worker - Short cache
+# Manifest - Short cache
 /manifest.json
   Cache-Control: public, max-age=3600
   Content-Type: application/manifest+json
-  X-Content-Type-Options: nosniff
-
-/sw.js
-  Cache-Control: public, max-age=0, must-revalidate
-  Content-Type: application/javascript
   X-Content-Type-Options: nosniff
 
 # Sitemaps - Daily cache
