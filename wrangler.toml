@@ -1,33 +1,10 @@
 # Cloudflare Pages Configuration for All Online Tools Hub
+# For Pages projects, most configuration is done via the Cloudflare dashboard
+# Build command: npm run build (defined in package.json)
+# Build output directory: . (root directory)
+# Custom headers: _headers file
+# Custom redirects: _redirects file
+
 name = "allonlinetoolshub"
 compatibility_date = "2025-01-03"
-
-# Pages configuration
 pages_build_output_dir = "."
-
-# Build configuration
-[build]
-command = "npm run build"
-cwd = "."
-
-# Build environment
-[build.environment]
-NODE_VERSION = "18"
-
-# Development configuration
-[env.development]
-workers_dev = true
-
-# Production configuration
-[env.production]
-routes = [
-  { pattern = "allonlinetoolshub.com/*", zone_name = "allonlinetoolshub.com" },
-  { pattern = "www.allonlinetoolshub.com/*", zone_name = "allonlinetoolshub.com" }
-]
-
-# Asset optimization
-[site]
-bucket = "."
-
-# Custom headers are defined in _headers file
-# Custom redirects are defined in _redirects file
