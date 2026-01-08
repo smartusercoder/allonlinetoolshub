@@ -1,1 +1,0 @@
-import t from"./purify.es-DPbt-htu.js";const e=e=>t.sanitize(e,{ALLOWED_TAGS:["b","i","em","strong","a","p","br","ul","ol","li","h1","h2","h3","h4","h5","h6","code","pre","blockquote"],ALLOWED_ATTR:["href","title","target"],ALLOWED_URI_REGEXP:/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i});export{e as s};
