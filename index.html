@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Online Tools Hub</title>
+    <meta
+      name="description"
+      content="Discover 500+ exclusive, high-demand calculators, converters, and productivity tools."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,7 +16,7 @@
         <p class="eyebrow">All Online Tools Hub</p>
         <h1>500+ Online Tools for Calculators, Converters & Productivity</h1>
         <p class="subtitle">
-          A curated, high-demand directory of exclusive tools. Every tool is designed to be used only on this site.
+          A curated, high-demand directory of exclusive tools. Everything runs client-side in your browser.
         </p>
       </div>
       <div class="stats">
@@ -24,14 +28,31 @@
           <strong id="category-count">0</strong>
           <span>Categories</span>
         </div>
+        <div>
+          <strong id="favorite-count">0</strong>
+          <span>Favorites</span>
+        </div>
       </div>
     </header>
 
     <main class="layout">
-      <section class="tool-panel">
+      <section class="tool-panel" aria-label="Tool directory">
         <div class="tool-panel__search">
           <label for="search">Search tools</label>
           <input id="search" type="search" placeholder="Search calculators, converters, SEO, finance..." />
+        </div>
+        <div class="tool-panel__controls">
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="demand">Demand score</option>
+          </select>
+          <label class="toggle">
+            <input type="checkbox" id="favorites-only" />
+            <span>Favorites only</span>
+          </label>
         </div>
         <div class="tool-panel__filters">
           <button class="filter is-active" data-filter="all">All</button>
@@ -49,11 +70,13 @@
 
     <footer class="site-footer">
       <p>
-        Built for high-demand searches with fast, client-side calculations. Save, share, or bookmark the tools you
-        use most.
+        Built for high-demand searches with fast, client-side calculations. Save favorites, copy results, and share tools
+        instantly.
       </p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11.11.1/lib/browser/math.js"></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>
